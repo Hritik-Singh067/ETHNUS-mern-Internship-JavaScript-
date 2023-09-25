@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethnus Mern Internship - JS TASK 8</title>
+    <!-- This task is done by
+            Name: Hritik Singh
+            Reg no: 21BCE11692 -->
+</head>
+<script>
+    function Validate() {
+        firstname();
+        lastname();
+        Email();
+        Password();
+        matchpass();
+        Age();
+        PhoneNumber();
+        Address();
+        State();
+        return false;
+    }
+    function firstname() {
+        var FName = document.getElementById("first-name").value;
+        if (FName == "") {
+            document.getElementById("message1").innerHTML = "POOR";
+        }
+        else {
+            document.getElementById("message1").innerHTML = "ACCEPTED";
+            document.getElementById("message1").style.color = "green";
+        }
+    }
+    function lastname() {
+        var LName = document.getElementById("last-name").value;
+        if (LName == "") {
+            document.getElementById("message2").innerHTML = "POOR";
+        }
+        else {
+            document.getElementById("message2").innerHTML = "ACCEPTED";
+            document.getElementById("message2").style.color = "green";
+        }
+    }
+    function Email() {
+        var email = document.getElementById("email").value;
+        if (email == "") {
+            document.getElementById("message3").innerHTML = "POOR";
+        }
+        else if (!email.includes("@")) {
+            document.getElementById("message3").innerHTML = "NOT VALID";
+            document.getElementById("message3").style.color = "orange";
+        }
+        else {
+            document.getElementById("message3").innerHTML = "ACCEPTED";
+            document.getElementById("message3").style.color = "green";
+        }
+    }
+    function matchpass() {
+        var p2 = document.getElementById("repassword").value;
+        var pw = document.getElementById("password").value;
+        if (p2 == "") {
+            document.getElementById("message5").innerHTML = "POOR";
+        }
+        else if (p2 != pw) {
+            document.getElementById("message5").innerHTML = "MISMATCH";
+            document.getElementById("message5").style.color = "orange";
+        }
+        else {
+            document.getElementById("message5").innerHTML = "ACCEPTED";
+            document.getElementById("message5").style.color = "green";
+        }
+    }
+    function Password() {
+        var pw = document.getElementById("password").value;
+        if (pw == "") {
+            document.getElementById("message4").innerHTML = "POOR";
+        }
+        else if (pw.length < 8) {
+            document.getElementById("message4").innerHTML = "TOO SHORT";
+        }
+        else if (!containsSpecialChars(pw)) {
+            document.getElementById("message4").innerHTML = "WEAK";
+            document.getElementById("message4").style.color = "orange";
+        }
+        else {
+            document.getElementById("message4").innerHTML = "STRONG";
+            document.getElementById("message4").style.color = "green";
+        }
+    }
+    function containsSpecialChars(str) {
+        const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        return specialChars.test(str);
+    }
+    function Age() {
+        var age = document.getElementById("age").value;
+        var message = document.getElementById("message6");
+        if (age == "") {
+            message.innerHTML = "POOR";
+        }
+        else if (age < 0 || age > 99) {
+            message.innerHTML = "MUST BE BETWEEN 0-99"
+            message.style.color = "orange";
+        }
+        else {
+            message.innerHTML = "ACCEPTED";
+            message.style.color = "green";
+        }
+    }
+    function PhoneNumber() {
+        var Pno = document.getElementById("phone-number").value;
+        var message = document.getElementById("message7");
+        if (Pno == "") {
+            message.innerHTML = "POOR";
+        }
+        else if (Pno < 1000000000 || Pno > 9999999999) {
+            message.innerHTML = "NOT VALID";
+            message.style.color = "orange";
+        }
+        else {
+            message.innerHTML = "ACCEPTED";
+            message.style.color = "green";
+        }
+    }
+    function Address() {
+        var Add = document.getElementById("address").value;
+        var message = document.getElementById("message8");
+        if (Add == "") {
+            message.innerHTML = "POOR";
+        }
+        else {
+            message.innerHTML = "ACCEPTED";
+            message.style.color = "green";
+        }
+    }
+    function State() {
+        var state = document.getElementById("state").value;
+        var message = document.getElementById("message9");
+        if (state == "") {
+            message.innerHTML = "POOR";
+        }
+        else {
+            message.innerHTML = "ACCEPTED";
+            message.style.color = "green";
+        }
+    }
+</script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    label {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    select,
+    textarea {
+        display: inline-block;
+        width: 97%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    input[type="checkbox"] {
+        margin-right: 5px;
+        margin-bottom: 15px;
+    }
+
+    button {
+        margin: 10px auto auto;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form onsubmit="return false">
+            <label class="labels" for="first-name">First Name</label>
+            <span id="message1" style="color:red"> </span>
+            <input type="text" id="first-name" name="first-name"><br>
+            <label class="labels" for="last-name">Last Name</label>
+            <span id="message2" style="color:red"> </span>
+            <input type="text" id="last-name" name="last-name"><br>
+            <label class="labels" for="email">Email</label>
+            <span id="message3" style="color:red"> </span>
+            <input type="email" id="email" name="email"><br>
+            <label class="labels" for="password">Password</label>
+            <span id="message4" style="color:red"> </span>
+            <input type="password" id="password" name="password"><br>
+            <label class="labels" for="re-enter-password">Re-enter Password</label>
+            <span id="message5" style="color:red"> </span>
+            <input type="password" id="repassword" name="re-enter-password"><br>
+            <label>Gender</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+
+            <label class="labels" for="age">Age</label>
+            <span id="message6" style="color:red"> </span>
+            <input type="number" id="age" name="age"><br>
+            <label class="labels" for="phone-number">Phone Number</label>
+            <span id="message7" style="color:red"> </span>
+            <input type="number" id="phone-number" name="phone-number"><br>
+            <label class="labels" for="address">Address</label><br>
+            <span id="message8" style="color:red"> </span>
+            <textarea id="address" name="address" rows="4"></textarea><br>
+            <label class="labels" for="state">State</label>
+            <span id="message9" style="color:red"> </span>
+            <input type="text" id="state" name="state"><br>
+
+            <br>
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+                <!-- Add more countries as needed -->
+            </select><br>
+
+            <label>Languages</label>
+            <input type="checkbox" id="english" name="languages[]" value="english">
+            <label for="english">English</label>
+            <input type="checkbox" id="spanish" name="languages[]" value="spanish">
+            <label for="spanish">Spanish</label>
+            <input type="checkbox" id="french" name="languages[]" value="french">
+            <label for="french">French</label>
+            <input type="checkbox" id="german" name="languages[]" value="german">
+            <label for="german">German</label><br>
+            <span id="message10" style="color:red"> </span>
+            <label>
+                <input type="checkbox" id="declaration" name="declaration">
+                I hereby declare that all the given details are true.
+            </label>
+            <br>
+
+            <button onclick="Validate()">Register</button>
+        </form>
+    </div>
+</body>
+
+</html>

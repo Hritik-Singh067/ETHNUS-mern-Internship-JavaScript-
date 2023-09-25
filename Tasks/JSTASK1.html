@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethnus Mern Internship - JS TASK 1</title>
+    <!-- This task is done by
+            Name: Hritik Singh
+            Reg no: 21BCE11692 -->
+</head>
+<script>
+    function reverse_a_number() {
+        var num =document.getElementById("Num").value;
+        let reversed_num = 0;
+        while (num !== 0) {
+            reversed_num = reversed_num * 10 + num % 10;
+            num = Math.floor(num / 10);
+        }
+        const element = document.getElementById("result");
+        element.innerHTML = "The answer is :" + reversed_num;
+        return false;
+    }
+</script>
+<body>
+<form id="myForm" onsubmit="return reverse_a_number()">
+    <label>Enter the Number : </label>
+    <input type="number" id="Num" value="123">
+    <br>
+    <input type="submit" value="submit"> 
+</form>
+<h3 id="result"></h3>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethnus Mern Internship - JavascriptTask5</title>   
+    <!-- This task is done by
+            Name: Hritik Singh
+            Reg no: 21BCE11692 -->
+    <style>
+.container{
+
+    width: 700px;
+    position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%,-30%);
+        text-align: left;
+        padding: 20px;
+    border: 2px solid;
+}
+.box{
+    margin-top:1em ;
+    margin-left: 40px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+  
+        <form id="myForm">
+            <div class="box">
+                <label for="name">Name</label>
+            <input type="text" id="iname" required>
+            <span id="rname" style="color: red;"></span><br>
+            </div>
+            
+           <div class="box">
+            <label for="email">Email</label>
+            <input  id="iemail" required>
+            <span id="remail" style="color: red;"></span><br>
+           </div>
+            
+            <div class="box">
+                <label for="website">website</label>
+                <input  id="iwebsite" required>
+                <span id="rwebsite" style="color: red;"></span><br>
+            </div>
+            
+           <div class="box">
+            <label for="Message">Message</label>
+            <input type="text" id="imessage" required>
+            <span id="rmessage" style="color: red;"></span><br>
+           </div>
+            
+            <button type="submit" class="box">Submit</button>
+        </form>
+    </div>
+        <script>
+            const form = document.getElementById('myForm');
+            form.addEventListener('submit', function (e) {
+              const name = document.getElementById('iname').value;
+              const email = document.getElementById('iemail').value;
+              const website = document.getElementById('iwebsite').value;
+              const message = document.getElementById('imessage').value;
+        
+              // Reset error messages
+              document.getElementById('rname').textContent = '';
+              document.getElementById('remail').textContent = '';
+              document.getElementById('rwebsite').textContent = '';
+              document.getElementById('rmessage').textContent = '';
+        
+              let isValid = true;
+        
+              // Name validation
+              if (name.trim() === '') {
+                document.getElementById('rname').textContent = 'Name is required';
+                isValid = false;
+              }
+        
+            //   Email validation
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailRegex.test(email)) {
+                document.getElementById('remail').textContent = 'Email should be valid';
+                isValid = false;
+              }
+        
+              // Website validation (simple check for URL format)
+              const websiteRegex = /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w-]*)*\/?$/;
+              if (!websiteRegex.test(website)) {
+                document.getElementById('rwebsite').textContent = 'Valid URL should be there';
+                isValid = false;
+              }
+        
+              // Message validation
+              if (message.trim() === '') {
+                document.getElementById('rmessage').textContent = 'Message is required';
+                isValid = false;
+              }
+        
+              if (!isValid) {
+                e.preventDefault(); // Prevent form submission if there are validation errors
+              }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethnus Mern Internship - JS TASK 4</title>
+    <!-- This task is done by
+            Name: Hritik Singh
+            Reg no: 21BCE11692 -->
+</head>
+<script>
+    function time() {
+        var currentdate = new Date();
+        document.getElementById("timebtn").innerHTML = currentdate;
+    }
+    function date() {
+        var currentdate = new Date();
+        document.getElementById("datebtn").innerHTML = currentdate.toLocaleDateString('pt-PT');
+    }
+</script>
+
+<body>
+    <button value="Show time" onclick="date()">Show Date</button><br>
+    <p id="datebtn"></p>
+    <button value="Show Date" onclick="time()">Show Time</button>
+    <p id="timebtn"></p>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethnus Mern Internship - JS TASK 7</title>
+    <!-- This task is done by
+            Name: Hritik Singh
+            Reg no: 21BCE11692 -->
+</head>
+<style>
+    #object {
+        position: absolute;
+        width: 300px;
+    }
+
+    #axis {
+        width: 100%;
+        height: 300px;
+        position: relative;
+    }
+
+    .two {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div id="axis" class="one">
+        <img id="object" src="image/pngwing.com.png" />
+    </div>
+    <div class="two">
+        <button onclick="myMove()">Start</button>
+        <button onclick="stop()">Stop</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+</body>
+
+<script>
+    var id = null;
+    var pos = 0;
+    function myMove() {
+        var elem = document.getElementById("object");
+        clearInterval(id);
+        id = setInterval(frame, 10);
+        function frame() {
+            pos++;
+            elem.style.left = pos + 'px';
+        }
+    }
+    function stop() {
+        clearInterval(id);
+    }
+    function reset() {
+        document.getElementById("object").style.left="0px";
+        pos=0;
+    }
+</script>
+
+</html>

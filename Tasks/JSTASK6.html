@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethnus Mern Internship - JavascriptTask6</title>
+    <!-- This task is done by
+            Name: Hritik Singh
+            Reg no: 21BCE11692 -->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-box {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 300px;
+            width: 100%;
+        }
+
+        .login-box h1 {
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background-color: #3897f0;
+            color: #fff;
+            padding: 15px 0;
+            /* Increased padding for larger button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 85%;
+        }
+
+        .btn:hover {
+            background-color: #3578e5;
+        }
+
+        .forgot-password {
+            color: #3897f0;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: auto;
+            /* Push the element to the right-most side */
+            margin-right: 10px;
+        }
+
+        .signup-link {
+            margin-top: 20px;
+            color: #000;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .remember-me input[type="checkbox"] {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-box">
+        <h1>Instagram</h1>
+        <div class="input-group">
+            <input type="text" placeholder="Username">
+        </div>
+        <div class="input-group">
+            <input type="password" placeholder="Password">
+        </div>
+        <button class="btn">Log In</button>
+        <div style="display: flex;">
+            <div class="remember-me">
+                <input type="checkbox" id="rememberMe">
+                <label for="rememberMe">Remember Me</label>
+            </div>
+
+            <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+        <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+</body>
+
+</html>

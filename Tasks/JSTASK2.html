@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethnus Mern Internship - JS TASK 2</title>
+    <!-- This task is done by
+            Name: Hritik Singh
+            Reg no: 21BCE11692 -->
+</head>
+<script>
+    function alphabetical() {
+        var str = document.getElementById("string").value;
+        var Sortedstr = str.split("").sort().join("");
+        const element = document.getElementById("result");
+        console.log(Sortedstr);
+        element.innerHTML = "The result is :" + Sortedstr;
+        return false;
+    }
+</script>
+
+<body>
+    <form onsubmit="return false">
+        <label>Enter the string : </label>
+        <input type="text" id="string">
+        <br>
+        <button value="submit" onclick="alphabetical()">Submit</button>
+    </form>
+    <h3 id="result"></h3>
+</body>
+
+</html>
